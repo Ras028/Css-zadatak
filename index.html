@@ -4,28 +4,33 @@
     <meta charset="UTF-8">
     <title>Zadatak 1</title>
     <style>
-        a[href^="https://www.google.com"]{
+        a[href*="https://www.google.com"]{
             color: green;
         }
-        a[target]{
+        a[href*="https://www.link-group.eu"]{
             color: red;
         }
-        p.rec::after{
-            content: " NEW";
-            color: yellow;
-        }
-        p.crvena{
+        #second-div p:nth-child(even){
             color: red;
         }
-
-        p.plava{
+        #second-div p:nth-child(odd){
             color: blue;
         }
-        p.italic:hover{
-            font-style: italic;
+        #first-div > p:nth-of-type(1)::after {
+            content: " NEW";
+            color: yellow;
+            font-weight: bold;
         }
-        
+        #first-div >p:nth-of-type(2)::after {
+            content: " NEW";
+            color: yellow;
+            font-weight: bold;
+        }
+            #first-div + p + p:hover {
+            font-style: italic;
+        }    
 
+        
     </style>
 </head>
 <body>
@@ -33,21 +38,21 @@
     <p>Paragraph 1</p>
     <a href="https://www.google.com">Google</a>
     <a href="https://www.google.com/doodles">Google Doodles</a>
-    <a href="https://www.link-group.eu/" target="_blank">Go to Link link-group</a>
+    <a href="https://www.link-group.eu/">Go to Link link-group</a>
     <div id="first-div">
         <h2>Subheading</h2>
-        <p class="rec">Paragraph 2</p>
-        <p class="rec">Paragraph 3</p>
+        <p>Paragraph 2</p>
+        <p>Paragraph 3</p>
         <div id="second-div">
             <h3>Sub subheading</h3>
-            <p class="crvena">Paragraph 4</p>
-            <p class="plava">Paragraph 5</p>
-            <p class="crvena">Paragraph 6</p>                     
-            <p class="plava">Paragraph 7</p>
-            <p class="crvena">Paragraph 8</p>
+            <p>Paragraph 4</p>
+            <p>Paragraph 5</p>
+            <p>Paragraph 6</p>                     
+            <p>Paragraph 7</p>
+            <p>Paragraph 8</p>
         </div>
     </div>
     <p>Paragraph 9</p>
-    <p class="italic">Paragraph 10</p>
+    <p>Paragraph 10</p>
 </body>
 </html>
